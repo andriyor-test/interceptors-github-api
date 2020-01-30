@@ -1,0 +1,8 @@
+.stargazers-count {
+  margin: 5px;
+}
+
+.repo:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+}

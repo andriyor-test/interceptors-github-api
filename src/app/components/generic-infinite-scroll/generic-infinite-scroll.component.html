@@ -1,0 +1,30 @@
+<app-loader *ngIf="loading"></app-loader>
+<div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    [fromRoot]="true"
+    [infiniteScrollContainer]="'.wrapper'"
+>
+  <mat-list role="list" *ngIf="items.length">
+    <mat-list-item *ngFor="let item of items" class="repo"
+                   (click)="onItemSelect(item)"
+    >
+      <h3 matLine> {{item.full_name}} </h3>
+      <p matLine>
+        <span> {{item.language}} </span>
+        <ng-container *ngIf="item.language && item.description">
+          <span>--</span>
+        </ng-container>
+        <span> {{item.description}} </span>
+      </p>
+      <ng-container *ngIf="item.private">
+        <mat-icon>lock</mat-icon>
+      </ng-container>
+      <mat-icon>stars</mat-icon>
+      <div class="stargazers-count">{{item.stargazers_count}}</div>
+    </mat-list-item>
+  </mat-list>
+</div>

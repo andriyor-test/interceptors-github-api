@@ -1,0 +1,36 @@
+.users {
+  height: 200px;
+  overflow-y: auto;
+  width: fit-content;
+}
+
+::ng-deep.mat-pseudo-checkbox{
+  display: none !important;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.stargazers-count {
+  margin: 5px;
+}
+
+.wrapper {
+  height: 200px;
+  overflow-y: auto;
+  margin-top: 60px;
+}
+
+.repo:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.issues {
+  height: 250px;
+  overflow-y: auto;
+  margin-top: 60px;
+}

@@ -1,0 +1,15 @@
+<mat-grid-list cols="2" rowHeight="50px">
+  <mat-grid-tile
+    *ngFor="let item of pages"
+    [ngClass]="selected === item.position ? 'selected' : ''"
+  >
+    <a [routerLink]="[item.path]" (click)="selected = item.position"
+      >{{ item.position }}. {{ item.path | titlecase }}</a
+    >
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-card>
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>
